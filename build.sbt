@@ -1,6 +1,6 @@
 import Dependencies._
 
-name := "ScalaCassandraAlpakka"
+name := "ScalaCassandraStreaming"
 
 version := "0.1"
 
@@ -12,4 +12,4 @@ libraryDependencies ++= (
     configDependencies
 )
 
-lazy val root = Project("ScalaCassandra", file("."))
+lazy val root = Project("ScalaCassandraStreamibg", file("."))

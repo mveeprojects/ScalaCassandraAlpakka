@@ -1,12 +1,14 @@
-# ScalaCassandraAlpakka
+# ScalaCassandraStreaming
 
-Simplified spin off from my other repo ([ScalaCassandra](https://github.com/mveeprojects/ScalaCassandra)) to learn about streaming to Cassandra via Alpakka.
+Simplified spin off from my other repo ([ScalaCassandra](https://github.com/mveeprojects/ScalaCassandra)) to learn about streaming to Cassandra via Alpakka. and also via vanilla Quill as part of a stream.
 
 ## Running the app
 
 1. Run this from the root of the project `./docker/CassandraVanillaDocker.sh`, wait a few seconds (up to 10/20) for
    Cassandra to become ready.
-2. Start the app up in IntelliJ.
+2. Start the app up in IntelliJ via either of the below two Main classes
+   * AlpakkaMain
+   * QuillMain
 
 ## Cqlsh
 

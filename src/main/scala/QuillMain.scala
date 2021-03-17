@@ -9,7 +9,7 @@ import utils.Logging
 import java.time.Instant
 import scala.concurrent.Future
 
-object QuillStreamMain extends App with Logging {
+object QuillMain extends App with Logging {
 
   CassandraDB.init() match {
     case Left(msg) =>
