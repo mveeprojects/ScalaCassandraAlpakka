@@ -1,6 +1,6 @@
 # ScalaCassandraStreaming
 
-Simplified spin off from my other repo ([ScalaCassandra](https://github.com/mveeprojects/ScalaCassandra)) to learn about streaming to Cassandra via Alpakka. and also via vanilla Quill as part of a stream.
+Simplified spin-off from my other repo ([ScalaCassandra](https://github.com/mveeprojects/ScalaCassandra)) to learn about streaming to Cassandra via Alpakka. and also via vanilla Quill as part of a stream.
 
 ## Running the app
 
