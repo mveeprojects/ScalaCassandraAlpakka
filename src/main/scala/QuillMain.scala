@@ -7,7 +7,6 @@ import setup.DBConfig._
 import utils.Logging
 
 import java.time.Instant
-import scala.concurrent.Future
 
 object QuillMain extends App with Logging {
 
