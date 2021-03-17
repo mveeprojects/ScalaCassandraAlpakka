@@ -22,7 +22,7 @@ object AlpakkaMain extends App with AlpakkaCassandraSetup with Logging {
 
   val source = Source(videoList)
 
-  val cassandraInsertFlow = CassandraFlow.create(
+  val alpakkaInsertFlow = CassandraFlow.create(
     CassandraWriteSettings.defaults,
     s"INSERT INTO testkeyspace.video(userid, videoid, title, creationdate) VALUES(?, ?, ?, ?)",
     insertStatementBinder
@@ -31,7 +31,7 @@ object AlpakkaMain extends App with AlpakkaCassandraSetup with Logging {
   val sink = Sink.foreach(println)
 
   source
-    .via(cassandraInsertFlow)
+    .via(alpakkaInsertFlow)
     .to(sink)
     .run
 }
