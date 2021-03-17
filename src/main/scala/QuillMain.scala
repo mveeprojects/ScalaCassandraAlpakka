@@ -23,9 +23,9 @@ object QuillMain extends App with Logging {
 
   val source = Source(videoList)
 
-  val quillInsertFlow: Flow[Video, Future[Unit], NotUsed] = {
+  val quillInsertFlow: Flow[Video, Unit, NotUsed] = {
     import quillDB._
-    Flow[Video].map(video =>
+    Flow[Video].mapAsync(10)(video =>
       quillDB.run(quote {
         query[Video].insert(lift(video))
       })
