@@ -7,8 +7,11 @@ import setup.DBConfig._
 import utils.Logging
 
 import java.time.Instant
+import scala.concurrent.Future
 
 object QuillMain extends App with Logging {
+
+  import QuillUtils.insert
 
   CassandraDB.init() match {
     case Left(msg) =>
@@ -23,11 +26,8 @@ object QuillMain extends App with Logging {
   val source = Source(videoList)
 
   val quillInsertFlow: Flow[Video, Unit, NotUsed] = {
-    import quillDB._
     Flow[Video].mapAsync(10)(video =>
-      quillDB.run(quote {
-        query[Video].insert(lift(video))
-      })
+      insert(video)
     )
   }
 
@@ -37,4 +37,11 @@ object QuillMain extends App with Logging {
     .via(quillInsertFlow)
     .to(sink)
     .run
+}
+
+object QuillUtils {
+  import quillDB._
+  def insert(video: Video): Future[Unit] = quillDB.run(quote {
+    query[Video].insert(lift(video))
+  })
 }

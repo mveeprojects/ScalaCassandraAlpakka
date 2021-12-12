@@ -8,7 +8,7 @@ import utils.Logging
 
 import java.time.Instant
 
-object AlpakkaMain extends App with AlpakkaCassandraSetup with Logging {
+object AlpakkaInsertMain extends App with AlpakkaCassandraSetup with Logging {
 
   CassandraDB.init() match {
     case Left(msg) =>

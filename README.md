@@ -7,7 +7,8 @@ Simplified spin-off from my other repo ([ScalaCassandra](https://github.com/mvee
 1. Run this from the root of the project `./docker/CassandraVanillaDocker.sh`, wait a few seconds (up to 10/20) for
    Cassandra to become ready.
 2. Start the app up in IntelliJ via either of the below two Main classes
-   * AlpakkaMain
+   * AlpakkaInsertMain
+   * AlpakkaSelectAndUpdateMain
    * QuillMain
 
 ## Cqlsh

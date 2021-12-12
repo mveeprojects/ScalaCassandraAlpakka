@@ -18,7 +18,7 @@ object CassandraDB extends Logging {
 
   def init(): Either[String, Done] = {
     logger.info("Waiting a few seconds to give ol Cassandra a chance to get ready...")
-    Thread.sleep(20000)
+    Thread.sleep(2000)
     logger.info("Configuring Keyspace and Schema in Cassandra...")
     Try {
       createKeyspaceIfNotExists()
