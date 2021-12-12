@@ -5,8 +5,8 @@ object Dependencies {
   object Versions {
     val logback         = "1.2.7"
     val pureConfig      = "0.17.1"
-    val cassandraDriver = "4.13.0"
-    val quill           = "3.12.0"
+    val cassandraDriver = "4.9.0"
+    val quill           = "3.6.1"
     val alpakka         = "3.0.4"
   }
 
